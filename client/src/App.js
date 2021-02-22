@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-// import Cards from "react-credit-cards";
+
 import "./App.css";
-// import "react-credit-cards/es/styles-compiled.css";
 
 function App() {
   const [number, setNumber] = useState("");
@@ -12,14 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Cards
-        number={number}
-        name={name}
-        expiry={expiry}
-        cvc={cvc}
-        focused={focus}
-      
-      /> */}
       <h4>PAYMENT DETAILS</h4>
       <br />
       <form method="POST" className="form-container">
