@@ -1,6 +1,5 @@
 const { Schema } = mongoose;
 
-const { Schema } = mongoose;
 const cardSchema = new Schema(
   {
     name: {
