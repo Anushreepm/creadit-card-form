@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import "./App.css";
 
 function App() {
@@ -19,6 +18,7 @@ function App() {
           name="number"
           placeholder="Card Number"
           value={number}
+          required
           onChange={(e) => setNumber(e.target.value)}
           onFocus={(e) => setFocus(e.target.name)}
         />
@@ -27,6 +27,7 @@ function App() {
           type="text"
           name="name"
           placeholder="Name"
+          required
           value={name}
           onChange={(e) => setName(e.target.value)}
           onFocus={(e) => setFocus(e.target.name)}
@@ -37,6 +38,7 @@ function App() {
           name="expiry"
           placeholder="MM/YY Expiry"
           value={expiry}
+          required
           onChange={(e) => setExpiry(e.target.value)}
           onFocus={(e) => setFocus(e.target.name)}
         />
@@ -46,11 +48,12 @@ function App() {
           name="cvc"
           placeholder="CVC"
           value={cvc}
+          required
           onChange={(e) => setCvc(e.target.value)}
           onFocus={(e) => setFocus(e.target.name)}
         />
         <br />
-        {/* <input type="submit" value="Submit" /> */}
+
         <button type="submit" value="Submit">
           Confirm Payment
         </button>
