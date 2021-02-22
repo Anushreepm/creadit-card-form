@@ -1,22 +1,28 @@
- const { CardDetails } = require("../models/cardDetails");
-
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-
+const CardDetails = require("../models/cardDetails");
 
 router.post("/card", (req, res) => {
-  const { name, creditCardNumber, creditCardDate, creditCardCCV } = req.body;
+  const { name, number, expiry, cvc } = req.body;
 
   const CardDetails = new CardDetails({
-    name,
-    creditCardNumber,
-    creditCardDate,
-    creditCardCCV,
+    name: name,
+    creditCardNumber: number,
+    creditCardDate: expiry,
+    creditCardCCV: cvc,
   });
 
   CardDetails.save()
     .then((user) => {
       console.log(user);
-      return res.json({ result: user })
-    }
+      return res.json({ result: user });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  return res.json({ result: req.user });
+});
+
+module.exports = router;

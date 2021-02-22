@@ -1,6 +1,6 @@
-const { Schema } = mongoose;
+const { Schema, model } = require("mongoose");
 
-const cardSchema = new Schema(
+const CardDetails = new Schema(
   {
     name: {
       type: String,
@@ -21,3 +21,5 @@ const cardSchema = new Schema(
   },
   { timestamps: true }
 );
+
+module.exports = model("CardDetails", CardDetails);
